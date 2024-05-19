@@ -4,30 +4,40 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  /* useState(
+    default value aap kuch v de skte ho :
+    true/false,
+    ''
+  ) */
+  const [counter, setCounter]=useState(15)
+  
+  // let counter = 15
+  const addValue = () =>{
+    /**
+    counter+=1;
+    * lekin aise counter ka value on screen change nhi hogi
+    * isuue ho rhe h ____UI Updation ___ pe
+    */
+   setCounter(counter+1)
+   console.log("clicked", Math.random(), counter);
+  }
+
+  const removeValue= ()=>{
+    if(counter>0)setCounter(counter-1)
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      
+      <h1>CHAI or REACT</h1>
+      <h2>counter value {counter}</h2>
+      <button onClick={addValue}>
+        Add value {counter}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <br/> <br/>
+      <button onClick={removeValue}>remove value {counter}</button>
+      <p>footer : {counter}</p>
     </>
   )
 }
