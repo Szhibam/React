@@ -21,6 +21,23 @@ function App() {
     */
    setCounter(counter+1)
    console.log("clicked", Math.random(), counter);
+
+   /**
+    * ___OUTPUT KYA HOGA?_____
+    * setCounter(counter+1) -->yaha v same kaam
+    * setCounter(counter+1) -->yaha v same kaam
+    * setCounter(counter+1) -->yaha v same kaam
+    * setCounter(counter+1) -->yaha v same kaam
+    * _______________________________________________________________________________________________
+    * to kya aisa krne se counter ka value 4 bar update hoga ?
+    * nhi ...... kyoki react me kaam batches me hote h
+    * wo ek bundle banayega kaam ka or dekhe ga areh ye to ek hi kam h bar bar kyu karu ?
+    * lekin agar aaoko kisi reason k wajah se counter ko 4 bar increment krna ho wo bhi isi larah se 
+    * ----------------------------------------------------------------------------------------------->>>>>>>>>>>>
+    * setCounter( (prevCounter) => prevCounter +1)
+    * OR
+    * setCounter (prevCOunter => prevCOunter +1) X4
+    */
   }
 
   const removeValue= ()=>{
